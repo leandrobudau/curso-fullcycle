@@ -1,13 +1,17 @@
-FROM golang:1.19.4-alpine
+FROM golang:1.19.4-alpine AS builder
 
-WORKDIR /usrc/src/app
+WORKDIR /usr/src/app
 
-COPY go.mod ./
+COPY *.mod .
+COPY *.go .
 
-RUN go mod download && go mod verify
+RUN go build -o bin
 
-COPY . .
+# Optimized image
+FROM scratch 
 
-RUN go build -v -o /usr/local/bin/app .
+WORKDIR /app
 
-CMD ["app"]
+COPY --from=builder /usr/src/app/bin .
+
+CMD ["/app/bin"]
