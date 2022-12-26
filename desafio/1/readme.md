@@ -1,4 +1,7 @@
-# DOCKER - Desafio 1 do curso fullcycle
+## Link do desafio - Dockerhub
+[https://hub.docker.com/repository/docker/leandrobudau/fullcycle](https://hub.docker.com/repository/docker/leandrobudau/fullcycle)
+
+## DOCKER - Desafio 1 do curso fullcycle
 Esse desafio é muito empolgante principalmente se você nunca trabalhou com a linguagem Go!
 Você terá que publicar uma imagem no docker hub. Quando executarmos:
 
